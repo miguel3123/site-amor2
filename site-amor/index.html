@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>💌 Uma surpresa...</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(to top, #aee1f9, #dff6ff);
+    font-family: Arial;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* NUVENS */
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    width: 100px;
+    height: 60px;
+    opacity: 0.8;
+    animation: mover 30s linear infinite;
+}
+
+@keyframes mover {
+    from { transform: translateX(-150px); }
+    to { transform: translateX(110vw); }
+}
+
+/* GRAMA */
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: #7ed957;
+}
+
+/* CACHORROS */
+.dog {
+    position: absolute;
+    bottom: 80px;
+    width: 120px;
+    animation: pular 2s infinite alternate;
+}
+
+@keyframes pular {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+/* CAIXA */
+#box {
+    margin-top: 120px;
+    font-size: 22px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* BOTÃO */
+button {
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background: pink;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="box">
+    <p id="texto">💌 Ei... posso te mostrar uma coisa?</p>
+    <button onclick="proxima()">Sim 😅</button>
+</div>
+
+<!-- NUVENS -->
+<div class="cloud" style="top:50px;"></div>
+<div class="cloud" style="top:120px; animation-duration:40s;"></div>
+
+<!-- GRAMA -->
+<div class="grass"></div>
+
+<!-- CACHORROS -->
+<img class="dog" src="https://cdn-icons-png.flaticon.com/512/616/616408.png" style="left:20%;">
+<img class="dog" src="https://cdn-icons-png.flaticon.com/512/616/616430.png" style="left:60%;">
+
+<script>
+
+let fase = 0;
+
+function proxima() {
+    fase++;
+
+    const texto = document.getElementById("texto");
+    const botao = document.querySelector("button");
+
+    if (fase == 1) {
+        texto.innerHTML = "Eu sei que você não deve me conhecer...";
+        botao.innerHTML = "Continuar";
+    }
+
+    else if (fase == 2) {
+        texto.innerHTML = "Mas mesmo assim eu precisava te dizer isso 💭";
+    }
+
+    else if (fase == 3) {
+        texto.innerHTML = "Tem algo em você que chama atenção...";
+    }
+
+    else if (fase == 4) {
+        texto.innerHTML = "Seu jeito, seu sorriso... tudo é diferente 💙";
+    }
+
+    else if (fase == 5) {
+        texto.innerHTML = "Talvez eu nunca tenha coragem de falar pessoalmente 😅";
+    }
+
+    else if (fase == 6) {
+        texto.innerHTML = "Então resolvi fazer isso de um jeito diferente...";
+    }
+
+    else if (fase == 7) {
+        texto.innerHTML = "Só queria que você soubesse...";
+    }
+
+    else if (fase == 8) {
+        texto.innerHTML = "Que alguém por aí gosta de você 💖";
+    }
+
+    else if (fase == 9) {
+        texto.innerHTML = "E pensa em você mais do que deveria...";
+    }
+
+    else if (fase == 10) {
+        texto.innerHTML = "— De alguém anônimo 🐶";
+        botao.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>
